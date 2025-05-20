@@ -1,0 +1,29 @@
+{
+    // Editor
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.lightbulb.enabled": "off",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    // Files
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    // UI
+    "chat.commandCenter.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.editor.empty.hint": "hidden",
+    // Python
+    "python.languageServer": "Pylance",
+    "python.terminal.executeInFileDir": true,
+    // Copilot
+    "github.copilot.enable": {
+        "*": false,
+        "markdown": false,
+        "plaintext": false,
+        "scminput": false
+    }
+}

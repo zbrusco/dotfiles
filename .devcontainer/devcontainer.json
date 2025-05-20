@@ -1,0 +1,32 @@
+{
+  "name": "Ubuntu 24.04 Development",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "dev",
+  "postCreateCommand": "bash -c 'cd /workspaces && chmod +x ./scripts/setup.sh && ./scripts/setup.sh'",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.lightbulb.enabled": "off",
+        "editor.minimap.enabled": false,
+        "editor.renderWhitespace": "all",
+        "editor.tabSize": 4,
+        "editor.wordWrap": "on",
+        "files.autoSave": "onFocusChange",
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "github.copilot",
+        "ms-azuretools.vscode-containers"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/dotfiles,target=/home/dev/dotfiles,type=bind,consistency=cached"
+  ]
+}
