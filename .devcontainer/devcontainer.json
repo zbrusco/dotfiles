@@ -4,7 +4,6 @@
     "dockerfile": "Dockerfile"
   },
   "remoteUser": "dev",
-  "postCreateCommand": "bash -c 'cd /workspaces && chmod +x ./scripts/setup.sh && ./scripts/setup.sh'",
   "customizations": {
     "vscode": {
       "settings": {
