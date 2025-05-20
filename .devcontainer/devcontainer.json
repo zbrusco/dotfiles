@@ -1,5 +1,5 @@
 {
-  "name": "Ubuntu 24.04 Development",
+  "name": "Ubuntu Development",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -26,6 +26,7 @@
     }
   },
   "mounts": [
-    "source=${localWorkspaceFolder}/dotfiles,target=/home/dev/dotfiles,type=bind,consistency=cached"
+    "source=${localWorkspaceFolder}/dotfiles,target=/home/dev/dotfiles,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/projects,target=/home/dev/projects,type=bind,consistency=cached"
   ]
 }
