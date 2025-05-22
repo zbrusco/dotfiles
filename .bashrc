@@ -18,7 +18,7 @@ if command -v starship >/dev/null 2>&1; then
     eval "$(starship init bash)"
 else
     # Fallback PS1
-    export PS1="\u@\h:\w\$ "
+    export PS1="\u:\w \$ "
 fi
 
 # === WSL Integration ===
