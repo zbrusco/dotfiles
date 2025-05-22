@@ -4,6 +4,8 @@
     "dockerfile": "Dockerfile"
   },
   "remoteUser": "dev",
+  "workspaceFolder": "/home/dev",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/dev/dotfiles,type=bind,consistency=cached",
   "customizations": {
     "vscode": {
       "settings": {
@@ -26,7 +28,6 @@
     }
   },
   "mounts": [
-    "source=${localWorkspaceFolder}/dotfiles,target=/home/dev/dotfiles,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/projects,target=/home/dev/projects,type=bind,consistency=cached"
-  ]
+    "source=${localWorkspaceFolder}/../projects,target=/home/dev/projects,type=bind,consistency=cached"
+]
 }
