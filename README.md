@@ -4,7 +4,7 @@ Barebones config files for a Ubuntu container.
 
 ## Includes
 
-- Ubuntu 24.04
+- Ubuntu 22.04
 - Basic dev tools (git, curl, wget)
 - Node.js w/ npm
 - Python 3 w/ pip
