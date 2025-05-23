@@ -49,4 +49,4 @@ if ! shopt -oq posix; then
   [[ -f /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
 fi
 
-echo "WSL Ubuntu $(lsb_release -rs)!"
+# echo "WSL Ubuntu $(lsb_release -rs)!"
