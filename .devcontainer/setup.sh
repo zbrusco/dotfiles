@@ -1,4 +1,24 @@
 #!/bin/bash
+set -e
+
+PROJECTS_DIR="${HOME:-/home/$USER}/projects"
+PYTHON_BIN=$(which python)
+PIP_BIN=$(which pip)
+
+# === Python Projects ===
+echo "Searching for Python dependencies..."
+find "$PROJECTS_DIR" -type f -name "requirements.txt" | while read -r reqfile; do
+    echo "Installing Python packages from $reqfile"
+    sudo $PIP_BIN install -r "$reqfile"
+done
+
+# === Node.js Projects ===
+echo "Searching for Node.js dependencies..."
+find "$PROJECTS_DIR" -type f -name "package.json" | while read -r packagefile; do
+    projdir=$(dirname "$packagefile")
+    echo "Installing Node packages in $projdir"
+    (cd "$projdir" && npm install)
+done
 
 # Symlink dotfiles from ~/dotfiles to home directory
 DOTFILES_DIR="$HOME/dotfiles"
@@ -17,5 +37,4 @@ for file in "${dotfiles[@]}"; do
     fi
 done
 
-# Run /bin/bash
-exec "$@"
+source ~/.bashrc
