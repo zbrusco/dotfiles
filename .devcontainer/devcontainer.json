@@ -29,5 +29,6 @@
   },
   "mounts": [
     "source=${localWorkspaceFolder}/../projects,target=/home/dev/projects,type=bind,consistency=cached"
-]
+  ],
+  "postCreateCommand": "/home/dev/setup.sh"
 }

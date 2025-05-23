@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     sudo \
     locales \
+    lsb-release \
     wget \
     build-essential \
     nodejs \
@@ -17,8 +18,8 @@ RUN apt-get update && apt-get install -y \
 
 # Set up locale
 RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 # Create a non-root user
 ARG USERNAME=dev
@@ -36,6 +37,10 @@ RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
 # Switch to the user
 USER $USERNAME
 WORKDIR /home/$USERNAME
+
+# --- Copy setup script (does not run during build) ---
+COPY --chown=$USERNAME:$USERNAME setup.sh /home/dev/setup.sh
+RUN chmod +x /home/dev/setup.sh
 
 # Set default shell to bash
 SHELL ["/bin/bash", "-c"]
