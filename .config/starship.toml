@@ -1,0 +1,21 @@
+[username]
+show_always = false
+style_user = "bold green"
+style_root = "bold red"
+
+[hostname]
+ssh_only = true
+style = "dimmed white"
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[✘](bold red)"
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+style = "blue"
+
+[git_status]
+disabled = false
+style = "yellow"
