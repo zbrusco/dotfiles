@@ -7,17 +7,19 @@ PIP_BIN=$(which pip)
 
 # === Python Projects ===
 echo "Searching for Python dependencies..."
-find "$PROJECTS_DIR" -type f -name "requirements.txt" | while read -r reqfile; do
+mapfile -t requirements_files < <(find "$PROJECTS_DIR" -type f -name "requirements.txt")
+for reqfile in "${requirements_files[@]}"; do
     echo "Installing Python packages from $reqfile"
     sudo $PIP_BIN install -r "$reqfile"
 done
 
 # === Node.js Projects ===
 echo "Searching for Node.js dependencies..."
-find "$PROJECTS_DIR" -type f -name "package.json" | while read -r packagefile; do
-    projdir=$(dirname "$packagefile")
-    echo "Installing Node packages in $projdir"
-    (cd "$projdir" && npm install)
+mapfile -t package_files < <(find "$PROJECTS_DIR" -type f -name "package.json")
+for package_file in "${package_files[@]}"; do
+    package_dir=$(dirname "$package_file")
+    echo "Installing Node.js packages from $package_file"
+    npm install --prefix "$package_dir"
 done
 
 # Symlink dotfiles from ~/dotfiles to home directory
