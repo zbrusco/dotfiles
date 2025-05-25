@@ -23,7 +23,8 @@
       },
       "extensions": [
         "github.copilot",
-        "ms-azuretools.vscode-containers"
+        "ms-azuretools.vscode-containers",
+        "ms-python.python"
       ]
     }
   },
