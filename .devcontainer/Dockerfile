@@ -37,7 +37,7 @@ RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VER
     make altinstall && \
     cd .. && rm -rf Python-${PYTHON_VERSION}*
 
-# Set python and pip to point to Python 3.12
+# Set python and pip to point to Python
 RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python${PYTHON_VERSION%.*} 1 && \
     update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip${PYTHON_VERSION%.*} 1 && \
     /usr/local/bin/python${PYTHON_VERSION%.*} -m pip install --upgrade pip
