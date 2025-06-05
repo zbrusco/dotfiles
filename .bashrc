@@ -21,6 +21,12 @@ else
     export PS1="\u:\w \$ "
 fi
 
+# === Aliases ===
+alias rm="rm -i"
+alias purge="rm -ri"
+alias ..="cd .."
+alias ...="cd ../.."
+
 # === WSL Integration ===
 export BROWSER="wslview"
 alias explorer='explorer.exe'
