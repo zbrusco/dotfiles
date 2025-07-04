@@ -2,6 +2,7 @@
     // Editor
     "editor.detectIndentation": false,
     "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
     "editor.lightbulb.enabled": "off",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
@@ -19,6 +20,19 @@
     // Python
     "python.languageServer": "Pylance",
     "python.terminal.executeInFileDir": true,
+    // Formatting
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     // Copilot
     "github.copilot.enable": {
         "*": false,
