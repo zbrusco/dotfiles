@@ -9,8 +9,6 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     wget \
     build-essential \
-    nodejs \
-    npm \
     zsh \
     libssl-dev \
     zlib1g-dev \
@@ -41,6 +39,11 @@ RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VER
 RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python${PYTHON_VERSION%.*} 1 && \
     update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip${PYTHON_VERSION%.*} 1 && \
     /usr/local/bin/python${PYTHON_VERSION%.*} -m pip install --upgrade pip
+
+# Install Node.js from NodeSource
+ARG NODEJS_VERSION=22.x
+RUN curl -fsSL https://deb.nodesource.com/setup_${NODEJS_VERSION} | bash - && \
+    apt-get install -y nodejs
 
 # Create a non-root user
 ARG USERNAME=dev
