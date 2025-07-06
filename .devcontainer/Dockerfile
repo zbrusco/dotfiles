@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     wget \
     build-essential \
+    nano \
     zsh \
     libssl-dev \
     zlib1g-dev \
