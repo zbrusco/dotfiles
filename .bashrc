@@ -23,7 +23,7 @@ fi
 
 # === Aliases ===
 alias rm="rm -i"
-alias purge="rm -ri"
+alias purge="rm -rf"
 alias ..="cd .."
 alias ...="cd ../.."
 
